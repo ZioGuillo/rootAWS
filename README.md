@@ -37,6 +37,10 @@ To specify variables directly on the command line, use the -var option:
 terraform apply -var="region=us-east-1" -var="admin_user_name=adminUser"
 ```
 
+```bash
+terraform apply -var-file="terraform.tfvars"
+```
+
 Access Outputs:
 After applying, Terraform will output the ARN and name of the created IAM user.
 
