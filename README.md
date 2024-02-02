@@ -46,6 +46,9 @@ After applying, Terraform will output the ARN and name of the created IAM user.
 
 Files
 main.tf: Contains the Terraform configuration to create the IAM user and attach the AdministratorAccess policy.
+
 variables.tf: Defines variables for the AWS region and IAM user name.
+
 outputs.tf: Defines outputs for the IAM user's ARN and name.
+
 README.md: This file, containing usage instructions.
