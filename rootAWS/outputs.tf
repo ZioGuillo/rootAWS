@@ -10,6 +10,7 @@ output "admin_user_name" {
 
 output "admin_user_access_key_id" {
   value = aws_iam_access_key.admin_user_key.id
+  sensitive = true
 }
 
 output "admin_user_secret_access_key" {
