@@ -19,8 +19,8 @@ To use this code, follow the steps below:
 3. Navigate to the rootAWS directory.
 4. Update the variables.tf file with your desired configurations.
 5. Run `terraform init` to initialize the Terraform project.
-6. Run `terraform plan` to see the execution plan.
-7. Run `terraform apply` to apply the changes and create the additional IAM user.
+6. Run `terraform plan` to see the execution plan. -var-file="terraform.tfvars"
+7. Run `terraform apply` to apply the changes and create the additional IAM user. -var-file="terraform.tfvars"
 
 ## Code Explanation
 
