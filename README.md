@@ -1,54 +1,43 @@
-# AWS Admin User Terraform Module
+# Root AWS Account
 
-This Terraform module creates an AWS IAM user with administrative privileges, granting full access to AWS services and resources.
+This repository contains code to create an additional IAM user with different roles as the root account. This is done to avoid using the root account as the principal account.
 
-## Prerequisites
+## Code
 
-- Terraform 0.14 or newer
-- AWS account and AWS CLI configured with access credentials
+The code to create the additional IAM user is as follows:
+
+## Root AWS Code
+
+This code is used to create an additional IAM user with different roles as the root to avoid using it as the principal account.
 
 ## Usage
 
-**Initialize Terraform:**
+To use this code, follow the steps below:
 
-```bash
-terraform init
-```
+1. Install Terraform on your local machine.
+2. Clone this repository.
+3. Navigate to the rootAWS directory.
+4. Update the variables.tf file with your desired configurations.
+5. Run `terraform init` to initialize the Terraform project.
+6. Run `terraform plan` to see the execution plan.
+7. Run `terraform apply` to apply the changes and create the additional IAM user.
 
-Create a terraform.tfvars file (optional):
-You can specify the values for region and admin_user_name in a terraform.tfvars file or pass them as variables when running Terraform.
+## Code Explanation
 
-Example terraform.tfvars:
+The code in this repository uses Terraform to provision the necessary AWS resources. It creates an IAM user with restricted permissions, ensuring that it is not used as the root account. This helps improve security by reducing the risk of accidental or unauthorized actions.
 
-```hcl
-region = "us-east-1"
-admin_user_name = "adminUser"
-```
+The main.tf file contains the Terraform configuration code, defining the resources to be created. The variables.tf file contains the input variables that can be customized based on your requirements.
 
-Apply the Terraform configuration:
+## Contributing
 
-```bash
-terraform apply
-```
+If you would like to contribute to this project, please follow the guidelines below:
 
-To specify variables directly on the command line, use the -var option:
+1. Fork this repository.
+2. Create a new branch for your changes.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
 
-```bash
-terraform apply -var="region=us-east-1" -var="admin_user_name=adminUser"
-```
+## License
 
-```bash
-terraform apply -var-file="terraform.tfvars"
-```
-
-Access Outputs:
-After applying, Terraform will output the ARN and name of the created IAM user.
-
-Files
-main.tf: Contains the Terraform configuration to create the IAM user and attach the AdministratorAccess policy.
-
-variables.tf: Defines variables for the AWS region and IAM user name.
-
-outputs.tf: Defines outputs for the IAM user's ARN and name.
-
-README.md: This file, containing usage instructions.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
