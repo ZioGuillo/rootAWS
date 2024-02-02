@@ -15,11 +15,14 @@ resource "aws_iam_access_key" "admin_user_key" {
   user    = aws_iam_user.admin_user.name
 }
 
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "_%@"
+}
+
 resource "aws_iam_user_login_profile" "admin_user_login_profile" {
-  user    = aws_iam_user.admin_user.name
-  # The password can be set directly or, preferably, generated. 
-  # IMPORTANT: Storing plain-text passwords in your Terraform files is not recommended for security reasons.
-  # Consider using a dynamic password generator and secure storage for the password.
-  password              = var.password # Change this to a secure password or a generated one
-  password_reset_required = true # Forces the user to change the password upon first login
+  user                    = aws_iam_user.admin_user.name
+  password_length         = 16
+  password_reset_required = true
 }

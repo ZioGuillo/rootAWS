@@ -17,3 +17,9 @@ output "admin_user_secret_access_key" {
   value     = aws_iam_access_key.admin_user_key.secret
   sensitive = true # Mark this output as sensitive to prevent it from being displayed in logs
 }
+
+output "admin_user_login_profile_password" {
+  description = "The initial password for the IAM user. Must be changed upon first login."
+  value       = aws_iam_user_login_profile.admin_user_login_profile.password
+  sensitive   = true
+}
