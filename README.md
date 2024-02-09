@@ -19,10 +19,6 @@ Variables for the Terraform configuration can be defined in a `terraform.tfvars`
 
 The code to create the additional IAM user is as follows:
 
-## Root AWS Code
-
-This code is used to create an additional IAM user with different roles as the root to avoid using it as the principal account.
-
 ## Usage
 
 To use this code, follow the steps below:
