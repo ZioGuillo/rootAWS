@@ -58,8 +58,13 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 # backend.tfvars
 
 region = "your-region"
+
 admin_user_name = "demo-admin-user"
+
 password = "YourSecurePasswordHere!"
+
 bucket         = "tf_state_storage-bucket"
+
 key            = "root/terraform.tfstate"
+
 dynamodb_table = "tf_state-state-lock"
