@@ -51,16 +51,13 @@ If you would like to contribute to this project, please follow the guidelines be
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
 
-# backend.tfvars
+## terraform.tfvars
 
+```bash
 region = "your-region"
-
 admin_user_name = "demo-admin-user"
-
 password = "YourSecurePasswordHere!"
-
 bucket         = "tf_state_storage-bucket"
-
 key            = "root/terraform.tfstate"
-
 dynamodb_table = "tf_state-state-lock"
+```
